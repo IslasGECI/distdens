@@ -1,0 +1,6 @@
+# Dependencias para las pruebas
+codecov
+pytest
+pytest-cov
+# Dependencias de desarrollo
+git+https://git@github.com/islasgeci/geoambiental@v0.1.0#egg=geoambiental-v0.1.0
