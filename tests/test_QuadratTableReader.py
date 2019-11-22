@@ -1,6 +1,6 @@
 import unittest
 import pandas as pd
-from ..io import QuadratTableReader
+from distdens.io import QuadratTableReader
 
 data = {'Especie': ['Synthliboramphus hypoleucus','Synthliboramphus hypoleucus','Especie2'], \
 'Sitio_o_colonia': ['Morro Prieto','Sitio2','Morro Prieto'], \

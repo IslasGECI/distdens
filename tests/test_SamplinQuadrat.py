@@ -1,6 +1,6 @@
 import unittest
 
-from ..models import SamplingQuadrat
+from distdens.models import SamplingQuadrat
 
 
 class TestGeoCircle(unittest.TestCase):

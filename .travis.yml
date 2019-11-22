@@ -3,11 +3,23 @@ dist: bionic
 language: python
 python:
   - "3.7"
+
+cache: pip
 # Comando para instala dependencias
+
 install:
   - pip install -r requirements.txt
 # Comando para correr las pruebas y medir cobertura 
+
 script:
-  - py.test --cov-report term --cov=distdens -v
+  - echo "Se corren las pruebas"
+  - make tests
+  - echo "Se construye e instala el módulo"
+  - pip install .
+  - echo "Se revisa el formato de los archivos"
+  - pylint-fail-under --fail_under 6.0 --disable=all distdens
+  - echo "Se verifica la resistencia de las pruebas a mutaciones"
+  - make mutation
+
 after_success:
   - codecov

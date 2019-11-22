@@ -1,6 +1,21 @@
-# Dependencias para las pruebas
-codecov
-pytest
-pytest-cov
-# Dependencias de desarrollo
+# Dependencias del módulo
+geoarea
+geopandas
+geopy
+gpxpy
+matplotlib
+numpy
+scipy
+sklearn
+utm
 git+https://git@github.com/islasgeci/geoambiental@v0.1.0#egg=geoambiental-v0.1.0
+
+# Dependencias de desarrollo
+autopep8
+codecov
+mutmut
+pylint
+pylint-fail-under
+pytest-cov
+pytest==5.0.1
+rope

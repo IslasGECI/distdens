@@ -1,4 +1,10 @@
-.PHONY: tests \
+.PHONY: clean mutation tests
+
+clean:
+	rm --recursive $$(find . -name "__pycache__")
+
+mutation:
+	mutmut run --paths-to-mutate distdens
 
 tests:
-	pytest --verbose
+	pytest --cov=distdens --cov-report=term --verbose
