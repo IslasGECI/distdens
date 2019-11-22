@@ -1,0 +1,15 @@
+name: CI
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-18.04
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Construye imagen
+      run: docker build --tag islasgeci/distdens .
+    - name: Corre pruebas
+      run: docker run islasgeci/distdens make tests
