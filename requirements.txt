@@ -8,7 +8,7 @@ numpy
 scipy
 sklearn
 utm
-git+https://git@github.com/islasgeci/geoambiental@v0.1.0#egg=geoambiental-v0.1.0
+git+https://git@github.com/islasgeci/geoambiental@v0.1.0
 
 # Dependencias de desarrollo
 autopep8
