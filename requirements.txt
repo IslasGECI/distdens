@@ -1,12 +1,7 @@
 # Dependencias del módulo
-geoarea
-geopandas
-geopy
-gpxpy
-matplotlib
 numpy
+pandas
 scipy
-sklearn
 utm
 git+https://git@github.com/islasgeci/geoambiental@v0.1.0
 
