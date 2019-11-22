@@ -1,6 +1,6 @@
-name: CI
+name: Corre Pruebas
 
-on: [push]
+on: [push, pull_request]
 
 jobs:
   build:
@@ -13,3 +13,5 @@ jobs:
       run: docker build --tag islasgeci/distdens .
     - name: Corre pruebas
       run: docker run islasgeci/distdens make tests
+    - name: Evalúa resistencia a mutaciones
+      run: docker run islasgeci/distdens make mutation
