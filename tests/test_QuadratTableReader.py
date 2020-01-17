@@ -29,6 +29,12 @@ class TestQuadratTableReader(unittest.TestCase):
         """
         self.assertTrue(type(self.cuadrantes).__name__ == 'ndarray')
 
+    def test_filter(self):
+        """
+        Verifica que la densidad de calcule de manera correcta
+        """
+        self.assertTrue(QuadratTableReader._filter_table(datos, filtro).Especie[0] == 'Synthliboramphus hypoleucus')
+
 
 if __name__ == '__main__':
     unittest.main()
