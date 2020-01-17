@@ -17,6 +17,12 @@ class TestGeoCircle(unittest.TestCase):
         """
         self.assertTrue(self.cuadrante.get_density() == 50/25)
 
+    def test_type_Point(self):
+        """
+        Verifica que la densidad de calcule de manera correcta
+        """
+        self.assertTrue(type(self.cuadrante._point).__name__ == 'Point')
+
 
 if __name__ == '__main__':
     unittest.main()
