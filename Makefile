@@ -1,7 +1,8 @@
 .PHONY: clean mutation tests
 
 clean:
-	rm --recursive $$(find . -name "__pycache__")
+	rm --force --recursive $$(find . -name "__pycache__")
+	rm --force .mutmut-cache
 
 mutation:
 	mutmut run --paths-to-mutate distdens
