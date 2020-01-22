@@ -1,4 +1,5 @@
 import unittest
+from geoambiental import Point
 
 from distdens.models import SamplingQuadrat
 
@@ -22,6 +23,13 @@ class TestGeoCircle(unittest.TestCase):
         Verifica que la densidad de calcule de manera correcta
         """
         self.assertTrue(type(self.cuadrante._point).__name__ == 'Point')
+
+    def test_lat_as_property(self):
+        """
+        Verifica que la densidad de calcule de manera correcta
+        """
+        self.cuadrante._point = Point(59, 30)
+        self.assertTrue(self.cuadrante.lat == 59)
 
 
 if __name__ == '__main__':
