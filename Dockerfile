@@ -1,5 +1,5 @@
 FROM python:3.7
-COPY . /workdir/
+COPY . /workdir
 WORKDIR /workdir
 RUN pip install numpy \
     autopep8 \
@@ -14,3 +14,4 @@ RUN pip install numpy \
     rope \
     scipy \
     utm
+CMD make
