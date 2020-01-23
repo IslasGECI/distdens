@@ -22,6 +22,7 @@ class TestQuadratTableReader(unittest.TestCase):
         Crea variables que se usarán en las pruebas
         """
         self.cuadrantes = QuadratTableReader.read(datos, filtro)
+        self.LectorTablaCuadrante = QuadratTableReader()
 
     def test_get_density(self):
         """
@@ -34,6 +35,28 @@ class TestQuadratTableReader(unittest.TestCase):
         Verifica que la densidad de calcule de manera correcta
         """
         self.assertTrue(QuadratTableReader._filter_table(datos, filtro).Especie[0] == 'Synthliboramphus hypoleucus')
+
+    def test_isStaticMethod_filter_table(self):
+        """
+        Verifica que la densidad de calcule de manera correcta
+        """
+        self.LectorTablaCuadrante._filter_table(datos, filtro)
+        pass
+
+    def test_isStaticMethod_create_quadrats_list(self):
+        """
+        Verifica que la densidad de calcule de manera correcta
+        """
+        data = QuadratTableReader._filter_table(datos, filtro)
+        self.LectorTablaCuadrante._create_quadrats_list(data)
+        pass
+
+    def test_isStaticMethod_read(self):
+        """
+        Verifica que la densidad de calcule de manera correcta
+        """
+        self.LectorTablaCuadrante.read(datos, filtro)
+        pass
 
 
 if __name__ == '__main__':
