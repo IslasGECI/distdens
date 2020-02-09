@@ -1,4 +1,4 @@
-name: Ciencia de Datos - GECI
+name: Mutation testing
 on: [push, pull_request]
 
 jobs:
@@ -10,4 +10,4 @@ jobs:
     - name: Construye imagen
       run: docker build --tag islasgeci/distdens .
     - name: Ejecuta objetivo principal del Makefile
-      run: docker run islasgeci/distdens
+      run: docker run islasgeci/distdens make
