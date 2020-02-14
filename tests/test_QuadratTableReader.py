@@ -1,6 +1,8 @@
 import unittest
 import pandas as pd
 from distdens.io import QuadratTableReader
+import numpy as np
+import utm
 
 data = {'Especie': ['Synthliboramphus hypoleucus','Synthliboramphus hypoleucus','Especie2'], \
 'Sitio_o_colonia': ['Morro Prieto','Sitio2','Morro Prieto'], \
@@ -23,6 +25,7 @@ class TestQuadratTableReader(unittest.TestCase):
         """
         self.cuadrantes = QuadratTableReader.read(datos, filtro)
         self.LectorTablaCuadrante = QuadratTableReader()
+        self.lon = np.array(np.array(utm.to_latlon(data['Este'][0],data['Norte'][0],int(data['Zona_utm'][0][:-1]), data['Zona_utm'][0][-1]))[1])
 
     def test_get_density(self):
         """
@@ -58,6 +61,14 @@ class TestQuadratTableReader(unittest.TestCase):
         self.LectorTablaCuadrante.read(datos, filtro)
         pass
 
+    def test_isTheRightUTMZone(self):
+        """
+        Verifica que la densidad de calcule de manera correcta
+        """
+        """
+        Verifica que la zona UTM es la correcta
+        """
+        self.assertTrue(self.lon == self.cuadrantes[0].lon)
 
 if __name__ == '__main__':
     unittest.main()
