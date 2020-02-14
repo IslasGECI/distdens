@@ -31,6 +31,11 @@ class TestGeoCircle(unittest.TestCase):
         self.cuadrante._point = Point(59, 30)
         self.assertTrue(self.cuadrante.lat == 59)
 
+    def test_mutant_10(self):
+        """
+        """
+        pass
+
 
 if __name__ == '__main__':
     unittest.main()
