@@ -1,5 +1,6 @@
 import unittest
 from geoambiental import Point
+import numpy as np
 
 from distdens.models import SamplingQuadrat
 
@@ -31,10 +32,10 @@ class TestGeoCircle(unittest.TestCase):
         self.cuadrante._point = Point(59, 30)
         self.assertTrue(self.cuadrante.lat == 59)
 
-    def test_mutant_10(self):
+    def test_x_is_a_property(self):
         """
         """
-        pass
+        self.assertAlmostEqual(self.cuadrante.x, np.array(399086.97330437))
 
 
 if __name__ == '__main__':
