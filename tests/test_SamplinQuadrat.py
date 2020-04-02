@@ -30,7 +30,7 @@ class TestGeoCircle(unittest.TestCase):
         Verifica que la densidad de calcule de manera correcta
         """
         self.cuadrante._point = Point(59, 30)
-        self.assertTrue(self.cuadrante.lat == 59)
+        self.assertEqual(self.cuadrante.lat, 59)
 
     def test_x_is_a_property(self):
         """
