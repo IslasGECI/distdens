@@ -1,4 +1,4 @@
-name: Mutation testing
+name: Conservación de Islas
 on: [push, pull_request]
 
 jobs:
