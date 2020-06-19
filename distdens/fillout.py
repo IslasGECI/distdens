@@ -15,3 +15,4 @@ def fillout(x, y, limits=None, **kwargs):
     x_prueba = np.concatenate([x_inicial,x_inicial,x_final,x_final,x_inicial,np.flip(x_cerrada.reshape(len(x_cerrada), 1))])
     y_prueba = np.concatenate([y_inicial,y_final,y_final,y_inicial,y_inicial,np.flip(y_cerrada.reshape(len(x_cerrada), 1))])
     plt.fill(x_prueba, y_prueba, **kwargs)
+    return x_prueba, y_prueba
