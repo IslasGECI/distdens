@@ -24,9 +24,7 @@ class QuadratTableReader(ABC):
         return np.array(
             [
                 SamplingQuadrat(
-                    *utm.to_latlon(
-                        row.Este, row.Norte, int(row.Zona_utm[:-1]), row.Zona_utm[-1]
-                    ),
+                    *utm.to_latlon(row.Este, row.Norte, int(row.Zona_utm[:-1]), row.Zona_utm[-1]),
                     row.Area_del_cuadrante,
                     row.Madrigueras_con_actividad_aparente,
                 )

@@ -1,6 +1,6 @@
 all: mutants
 
-repo = distdent
+repo = distdens
 codecov_token = eae768b1-8c32-40a8-89fd-6b7589f9efa8
 
 .PHONY: all clean format install lint mutants tests

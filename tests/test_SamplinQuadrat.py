@@ -6,7 +6,6 @@ from distdens.models import SamplingQuadrat
 
 
 class TestGeoCircle(unittest.TestCase):
-
     def setUp(self):
         """
         Crea variables que se usarán en las pruebas
@@ -17,13 +16,13 @@ class TestGeoCircle(unittest.TestCase):
         """
         Verifica que la densidad de calcule de manera correcta
         """
-        self.assertTrue(self.cuadrante.get_density() == 50/25)
+        self.assertTrue(self.cuadrante.get_density() == 50 / 25)
 
     def test_type_Point(self):
         """
         Verifica que la densidad de calcule de manera correcta
         """
-        self.assertTrue(type(self.cuadrante._point).__name__ == 'Point')
+        self.assertTrue(type(self.cuadrante._point).__name__ == "Point")
 
     def test_lat_as_property(self):
         """
@@ -45,8 +44,10 @@ class TestGeoCircle(unittest.TestCase):
     def test_utm_zone_is_a_property(self):
         """
         """
-        self.assertTrue(np.array_equal(self.cuadrante.utm_zone, np.array(['11', 'R'], dtype='<U21')))
+        self.assertTrue(
+            np.array_equal(self.cuadrante.utm_zone, np.array(["11", "R"], dtype="<U21"))
+        )
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()
