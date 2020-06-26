@@ -1,7 +1,7 @@
-.PHONY: clean mutation tests
-
-mutation:
+mutants:
 	mutmut run --paths-to-mutate distdens 
+
+.PHONY: clean mutants tests
 
 tests:
 	pytest --cov=distdens --cov-report=term --verbose
