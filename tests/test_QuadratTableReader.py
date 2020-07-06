@@ -11,7 +11,7 @@ data = {
     "Madrigueras_con_actividad_aparente": [0, 1, 2],
     "Norte": [3198223, 3198229, 3198266],
     "Sitio_o_colonia": ["Morro Prieto", "Sitio2", "Morro Prieto"],
-    "Zona_utm": ["11R", "11R", "11R"]
+    "Zona_utm": ["11R", "11R", "11R"],
 }
 
 datos = pd.DataFrame(data)

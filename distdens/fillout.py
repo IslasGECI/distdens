@@ -35,6 +35,7 @@ def fillout(x, y, limits=None, **kwargs):
     plt.fill(x_prueba, y_prueba, **kwargs)
     return x_prueba, y_prueba
 
+
 def _close_coordinate(coordinate, indice_pegado_costa):
     closed_coordinate = np.concatenate(
         [

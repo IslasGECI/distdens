@@ -26,6 +26,7 @@ def test_fillout_start_right_up():
     np.testing.assert_equal(x_expected, x_obtained)
     np.testing.assert_equal(y_expected, y_obtained)
 
+
 def test_close_coordinate():
     x_in: np.array = np.array([1, 2, 3])
     index = np.where(x_in == min(x_in))[0][0]
