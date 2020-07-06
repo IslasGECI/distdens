@@ -1,5 +1,5 @@
 from distdens import fillout
-from distdens.fillout import __close_coordinate
+from distdens.fillout import _close_coordinate
 import numpy as np
 
 
@@ -29,6 +29,6 @@ def test_fillout_start_right_up():
 def test_close_coordinate():
     x_in: np.array = np.array([1, 2, 3])
     index = np.where(x_in == min(x_in))[0][0]
-    x_obtained: np.array = __close_coordinate(x_in, index)
+    x_obtained: np.array = _close_coordinate(x_in, index)
     x_expected: np.array = np.array([[1], [2], [3], [1]])
     np.testing.assert_equal(x_expected, x_obtained)
