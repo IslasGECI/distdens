@@ -5,13 +5,13 @@ import numpy as np
 import utm
 
 data = {
-    "Especie": ["Synthliboramphus hypoleucus", "Synthliboramphus hypoleucus", "Especie2"],
-    "Sitio_o_colonia": ["Morro Prieto", "Sitio2", "Morro Prieto"],
     "Area_del_cuadrante": [4, 4, 4],
-    "Madrigueras_con_actividad_aparente": [0, 1, 2],
+    "Especie": ["Synthliboramphus hypoleucus", "Synthliboramphus hypoleucus", "Especie2"],
     "Este": [374448, 374458, 374542],
+    "Madrigueras_con_actividad_aparente": [0, 1, 2],
     "Norte": [3198223, 3198229, 3198266],
-    "Zona_utm": ["11R", "11R", "11R"],
+    "Sitio_o_colonia": ["Morro Prieto", "Sitio2", "Morro Prieto"],
+    "Zona_utm": ["11R", "11R", "11R"]
 }
 
 datos = pd.DataFrame(data)
