@@ -33,3 +33,11 @@ def test_close_coordinate():
     x_obtained: np.array = _close_coordinate(x_in, index)
     x_expected: np.array = np.array([[1], [2], [3], [1]])
     np.testing.assert_equal(x_expected, x_obtained)
+
+
+def test_testing():
+    x_limits: np.array = np.array([1, 3])
+    x_closed: np.array = np.array([[1], [2], [3], [1]])
+    x_obtained: np.array = _testing(x_limits, x_closed)
+    x_expected: np.array = np.array([[1], [3], [3], [1], [1], [1], [3], [2], [1]])
+    np.testing.assert_equal(x_expected, x_obtained)
