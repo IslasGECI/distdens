@@ -1,5 +1,5 @@
 from distdens import fillout
-from distdens.fillout import _close_coordinate
+from distdens.fillout import _close_coordinate _testing
 import numpy as np
 
 
