@@ -12,24 +12,24 @@ def fillout(x, y, limits=None, **kwargs):
     indice_pegado_costa = np.where(x == min(x))[0][0]
     closed_x = _close_coordinate(x, indice_pegado_costa)
     closed_y = _close_coordinate(y, indice_pegado_costa)
-    x_prueba = _testing(limits[0:2], closed_x)
+    x_prueba = np.concatenate(
         [
             x_inicial,
             x_inicial,
             x_final,
             x_final,
             x_inicial,
-            np.flip(closed_x.reshape(len(closed_x), 1)),
+            _flip_closed(closed_x),
         ]
     )
-    y_prueba = _testing(limits[2:4], closed_y)
+    y_prueba = np.concatenate(
         [
             y_inicial,
             y_final,
             y_final,
             y_inicial,
             y_inicial,
-            np.flip(closed_y.reshape(len(closed_y), 1)),
+            _flip_closed(closed_y),
         ]
     )
     plt.fill(x_prueba, y_prueba, **kwargs)
