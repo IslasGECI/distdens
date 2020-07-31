@@ -8,7 +8,7 @@ class SamplingQuadrat:
         self._point = Point(lat, lon)
 
     def get_density(self):
-        return self.count/self.area
+        return self.count / self.area
 
     @property
     def area(self):
