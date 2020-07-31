@@ -5,11 +5,7 @@ import utm
 
 data = {
     "Area_del_cuadrante": [4, 4, 4],
-    "Especie": [
-        "Synthliboramphus hypoleucus",
-        "Synthliboramphus hypoleucus",
-        "Especie2",
-    ],
+    "Especie": ["Synthliboramphus hypoleucus", "Synthliboramphus hypoleucus", "Especie2",],
     "Este": [374448, 374458, 374542],
     "Madrigueras_con_actividad_aparente": [0, 1, 2],
     "Norte": [3198223, 3198229, 3198266],
@@ -51,8 +47,7 @@ def test_filter():
     Verifica que la densidad de calcule de manera correcta
     """
     is_expected_specie = (
-        QuadratTableReader._filter_table(datos, filtro).Especie[0]
-        == "Synthliboramphus hypoleucus"
+        QuadratTableReader._filter_table(datos, filtro).Especie[0] == "Synthliboramphus hypoleucus"
     )
     assert is_expected_specie
 
