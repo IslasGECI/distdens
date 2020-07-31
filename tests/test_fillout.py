@@ -1,5 +1,5 @@
 from distdens import fillout
-from distdens.fillout import _close_coordinate _testing
+from distdens.fillout import _close_coordinate, _flip_closed
 import numpy as np
 
 
@@ -35,9 +35,8 @@ def test_close_coordinate():
     np.testing.assert_equal(x_expected, x_obtained)
 
 
-def test_testing():
-    x_limits: np.array = np.array([1, 3])
+def test_flip_closed():
     x_closed: np.array = np.array([[1], [2], [3], [1]])
-    x_obtained: np.array = _testing(x_limits, x_closed)
-    x_expected: np.array = np.array([[1], [3], [3], [1], [1], [1], [3], [2], [1]])
-    np.testing.assert_equal(x_expected, x_obtained)
+    flipped_closed_tests: np.array = np.array([[1], [3], [2], [1]])
+    flipped_closed = _flip_closed(x_closed)
+    np.testing.assert_equal(flipped_closed, flipped_closed_tests)

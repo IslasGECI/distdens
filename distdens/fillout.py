@@ -45,3 +45,8 @@ def _close_coordinate(coordinate, indice_pegado_costa):
         ]
     )
     return closed_coordinate
+
+
+def _flip_closed(closed):
+    flipped_closed = np.flip(closed.reshape(len(closed), 1))
+    return flipped_closed
