@@ -36,11 +36,3 @@ def test_flip_closed():
     flipped_closed_tests: np.array = np.array([[1], [3], [2], [1]])
     flipped_closed = _flip_closed(x_closed)
     np.testing.assert_equal(flipped_closed, flipped_closed_tests)
-
-
-def test_test_x():
-    limits: list = [0, 2, 0, 1]
-    closed: np.array = np.array([[1], [2], [3], [1]])
-    x_expected: np.array = np.array([[0], [0], [2], [2], [0], [1], [3], [2], [1]])
-    x_obtained: np.array = _test_x(limits, closed)
-    np.testing.assert_equal(x_expected, x_obtained)
