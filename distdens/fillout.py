@@ -33,12 +33,30 @@ def _flip_closed(closed):
 def _test_x(limits, closed):
     inicial = np.array(limits[0]).reshape(1, 1)
     final = np.array(limits[1]).reshape(1, 1)
-    prueba = np.concatenate([inicial, inicial, final, final, inicial, _flip_closed(closed),])
+    prueba = np.concatenate(
+        [
+            inicial,
+            inicial,
+            final,
+            final,
+            inicial,
+            _flip_closed(closed),
+        ]
+    )
     return prueba
 
 
 def _test_y(limits, closed):
     inicial = np.array(limits[2]).reshape(1, 1)
     final = np.array(limits[3]).reshape(1, 1)
-    prueba = np.concatenate([inicial, final, final, inicial, inicial, _flip_closed(closed),])
+    prueba = np.concatenate(
+        [
+            inicial,
+            final,
+            final,
+            inicial,
+            inicial,
+            _flip_closed(closed),
+        ]
+    )
     return prueba
