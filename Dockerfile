@@ -1,4 +1,4 @@
-FROM python:3.7
+FROM python:3.8
 COPY . /workdir
 WORKDIR /workdir
 RUN pip install \
@@ -12,8 +12,8 @@ RUN pip install \
     pandas \
     pylint \
     pylint-fail-under \
+    pytest \
     pytest-cov \
-    pytest==5.0.1 \
     rope \
     scipy \
     utm
