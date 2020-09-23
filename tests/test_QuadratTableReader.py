@@ -5,7 +5,11 @@ import utm
 
 data = {
     "Area_del_cuadrante": [4, 4, 4],
-    "Especie": ["Synthliboramphus hypoleucus", "Synthliboramphus hypoleucus", "Especie2",],
+    "Especie": [
+        "Synthliboramphus hypoleucus",
+        "Synthliboramphus hypoleucus",
+        "Especie2",
+    ],
     "Este": [374448, 374458, 374542],
     "Madrigueras_con_actividad_aparente": [0, 1, 2],
     "Norte": [3198223, 3198229, 3198266],
