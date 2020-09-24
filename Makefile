@@ -5,6 +5,12 @@ codecov_token = eae768b1-8c32-40a8-89fd-6b7589f9efa8
 
 .PHONY: all clean format install lint mutants tests
 
+check:
+	black --check --line-length 100 ${repo}
+	black --check --line-length 100 tests
+	flake8 --max-line-length 100 ${repo}
+	flake8 --max-line-length 100 tests
+
 clean:
 	rm --force .mutmut-cache
 	rm --recursive --force ${repo}.egg-info
@@ -12,8 +18,8 @@ clean:
 	rm --recursive --force test/__pycache__
 
 format:
-	black --check --line-length 100 ${repo}
-	black --check --line-length 100 tests
+	black --line-length 100 ${repo}
+	black --line-length 100 tests
 
 install:
 	pip install --editable .
