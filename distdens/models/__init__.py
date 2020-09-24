@@ -3,4 +3,4 @@ Submódulo encargado de contener las clases que representan las entidades involu
 en el calculo de los mapas de densidad
 """
 
-from .SamplingQuadrat import SamplingQuadrat # noqa
+from .sampling_quadrat import SamplingQuadrat  # noqa

@@ -3,4 +3,4 @@ Módulo utilizado para calcular los mapas de densidad a partir de datos de muest
 o busquedas exhaustivas.
 """
 
-from .fillout import fillout # noqa
+from .fillout import fillout  # noqa
