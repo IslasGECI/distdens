@@ -23,11 +23,13 @@ lint:
 	flake8 --max-line-length 100 tests
 	pylint \
         --disable=bad-continuation \
+        --disable=missing-class-docstring \
         --disable=missing-function-docstring \
         --disable=missing-module-docstring \
         ${repo}
 	pylint \
         --disable=bad-continuation \
+        --disable=missing-class-docstring \
         --disable=missing-function-docstring \
         --disable=missing-module-docstring \
         tests
