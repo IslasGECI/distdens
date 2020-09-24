@@ -1,6 +1,6 @@
+import numpy as np
 from distdens import fillout
 from distdens.fillout import _close_coordinate, _flip_closed
-import numpy as np
 
 
 def test_fillout_start_left_down():
