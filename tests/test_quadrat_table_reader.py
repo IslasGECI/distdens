@@ -1,7 +1,7 @@
-import pandas as pd
-from distdens.io import QuadratTableReader
 import numpy as np
+import pandas as pd
 import utm
+from distdens.io import QuadratTableReader
 
 data = {
     "Area_del_cuadrante": [4, 4, 4],
