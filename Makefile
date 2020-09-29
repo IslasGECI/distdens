@@ -3,7 +3,16 @@ all: mutants
 repo = distdens
 codecov_token = eae768b1-8c32-40a8-89fd-6b7589f9efa8
 
-.PHONY: all clean format install lint mutants tests
+define lint
+	pylint \
+        --disable=bad-continuation \
+        --disable=missing-class-docstring \
+        --disable=missing-function-docstring \
+        --disable=missing-module-docstring \
+        ${1}
+endef
+
+.PHONY: all clean format install linter mutants tests
 
 check:
 	black --check --line-length 100 ${repo}
@@ -24,21 +33,9 @@ format:
 install:
 	pip install --editable .
 
-lint:
-	flake8 --max-line-length 100 ${repo}
-	flake8 --max-line-length 100 tests
-	pylint \
-        --disable=bad-continuation \
-        --disable=missing-class-docstring \
-        --disable=missing-function-docstring \
-        --disable=missing-module-docstring \
-        ${repo}
-	pylint \
-        --disable=bad-continuation \
-        --disable=missing-class-docstring \
-        --disable=missing-function-docstring \
-        --disable=missing-module-docstring \
-        tests
+linter:
+	$(call lint, ${repo})
+	$(call lint, tests
 
 mutants:
 	mutmut run --paths-to-mutate ${repo}
