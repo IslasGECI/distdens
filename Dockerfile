@@ -1,20 +1,15 @@
-FROM python:3.8
-COPY . /workdir
+FROM python:3
 WORKDIR /workdir
+COPY . .
 RUN pip install \
     autopep8 \
     black \
     codecov \
     flake8 \
-    git+https://git@github.com/islasgeci/geoambiental@v0.1.0 \
     mutmut \
-    numpy \
-    pandas \
     pylint \
     pylint-fail-under \
     pytest \
     pytest-cov \
-    rope \
-    scipy \
-    utm
+    rope
 CMD make
