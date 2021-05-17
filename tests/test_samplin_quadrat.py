@@ -32,15 +32,15 @@ class TestGeoCircle(unittest.TestCase):
         self.assertEqual(self.cuadrante.lat, 59)
 
     def test_x_is_a_property(self):
-        """"""
+        """ """
         self.assertAlmostEqual(self.cuadrante.x, np.array(399086.97330437))
 
     def test_y_is_a_property(self):
-        """"""
+        """ """
         self.assertAlmostEqual(self.cuadrante.y, np.array(2765319.94402007))
 
     def test_utm_zone_is_a_property(self):
-        """"""
+        """ """
         self.assertTrue(
             np.array_equal(self.cuadrante.utm_zone, np.array(["11", "R"], dtype="<U21"))
         )
