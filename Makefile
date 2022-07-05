@@ -18,6 +18,7 @@ endef
 	clean \
 	coverage \
 	format \
+	init \
 	install \
 	linter \
 	mutants \
@@ -36,7 +37,7 @@ clean:
 	rm --recursive --force test/__pycache__
 
 coverage: install
-	pytest --cov=${module} --cov-modulert=xml --verbose && \
+	pytest --cov=${module} --cov-report=xml --verbose && \
 	codecov --token=${codecov_token}
 
 format:
