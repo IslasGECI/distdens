@@ -1,6 +1,6 @@
 all: check coverage mutants
 
-repo = distdens
+module = distdens
 codecov_token = eae768b1-8c32-40a8-89fd-6b7589f9efa8
 
 define lint
@@ -24,37 +24,36 @@ endef
 	tests
 
 check:
-	black --check --line-length 100 ${repo}
-	black --check --line-length 100 setup.py
+	black --check --line-length 100 ${module}
 	black --check --line-length 100 tests
-	flake8 --max-line-length 100 ${repo}
-	flake8 --max-line-length 100 setup.py
+	flake8 --max-line-length 100 ${module}
 	flake8 --max-line-length 100 tests
 
 clean:
 	rm --force .mutmut-cache
-	rm --recursive --force ${repo}.egg-info
-	rm --recursive --force ${repo}/__pycache__
+	rm --recursive --force ${module}.egg-info
+	rm --recursive --force ${module}/__pycache__
 	rm --recursive --force test/__pycache__
 
 coverage: install
-	pytest --cov=${repo} --cov-report=xml --verbose && \
+	pytest --cov=${module} --cov-modulert=xml --verbose && \
 	codecov --token=${codecov_token}
 
 format:
-	black --line-length 100 ${repo}
+	black --line-length 100 ${module}
 	black --line-length 100 tests
-	black --line-length 100 setup.py
+
+init: install tests
 
 install:
 	pip install --editable .
 
 linter:
-	$(call lint, ${repo})
+	$(call lint, ${module})
 	$(call lint, tests)
 
 mutants: install
-	mutmut run --paths-to-mutate ${repo}
+	mutmut run --paths-to-mutate ${module}
 
-tests: install
+tests:
 	pytest --verbose
