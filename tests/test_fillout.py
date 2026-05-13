@@ -1,6 +1,7 @@
 import numpy as np
 from distdens import fillout
 from distdens.fillout import _close_coordinate, _flip_closed
+import matplotlib
 
 
 def test_fillout_start_left_down():
@@ -8,9 +9,18 @@ def test_fillout_start_left_down():
     y_expected = np.array([[0], [1], [1], [0], [0], [0], [0], [1], [1], [0], [0]])
     x_in = np.array([0, 1, 1, 0, 0])
     y_in = np.array([0, 0, 1, 1, 0])
-    x_obtained, y_obtained = fillout(x_in, y_in)
+    color = "red"
+    x_obtained, y_obtained = fillout(x_in, y_in, color=color)
     np.testing.assert_equal(x_expected, x_obtained)
     np.testing.assert_equal(y_expected, y_obtained)
+
+    obtained_polygon = matplotlib.pyplot.gca().get_children()[0]
+    isinstance(obtained_polygon, matplotlib.patches.Polygon)
+
+    obtained_x_vertices = obtained_polygon.get_path().vertices[:, 0]
+    assert all(obtained_x_vertices == x_expected[:, 0])
+
+    assert obtained_polygon._original_edgecolor == color
 
 
 def test_fillout_start_right_up():
