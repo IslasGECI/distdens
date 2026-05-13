@@ -1,0 +1,9 @@
+services:
+  islasgeci:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: islasgeci/distdens:latest
+    command: bash
+    volumes:
+      - $PWD:/workdir
