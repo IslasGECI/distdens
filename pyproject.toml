@@ -10,10 +10,13 @@ description-file = "README.md"
 home-page = "https://github.com/IslasGECI/distdens"
 module = "distdens"
 requires = [
-        "geoambiental @ git+https://git@github.com/islasgeci/geoambiental",
+        "geoambiental",
         "numpy",
         "pandas",
         "scipy",
         "utm",
 ]
 requires-python=">=3.8"
+
+[tool.mutmut]
+paths_to_mutate = [ "distdens/" ]
