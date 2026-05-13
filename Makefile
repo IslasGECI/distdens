@@ -35,6 +35,7 @@ clean:
 	rm --recursive --force ${module}.egg-info
 	rm --recursive --force ${module}/__pycache__
 	rm --recursive --force test/__pycache__
+	rm --recursive --force mutants
 
 coverage: install
 	pytest --cov=${module} --cov-report=xml --verbose && \
@@ -54,7 +55,7 @@ linter:
 	$(call lint, tests)
 
 mutants: install
-	mutmut run --paths-to-mutate ${module}
+	mutmut run
 
 tests:
 	pytest --verbose
